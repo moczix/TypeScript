@@ -577,7 +577,6 @@ namespace ts {
             if (isExportOfNamespace(node)) facts |= ClassFacts.IsExportOfNamespace;
             else if (isDefaultExternalModuleExport(node)) facts |= ClassFacts.IsDefaultExternalExport;
             else if (isNamedExternalModuleExport(node)) facts |= ClassFacts.IsNamedExternalExport;
-            if (languageVersion <= ScriptTarget.ES5 && (facts & ClassFacts.MayNeedImmediatelyInvokedFunctionExpression)) facts |= ClassFacts.UseImmediatelyInvokedFunctionExpression;
             return facts;
         }
 
